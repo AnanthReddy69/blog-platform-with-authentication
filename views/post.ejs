@@ -1,0 +1,16 @@
+<h1><%= post.title %></h1>
+
+<p><%= post.content %></p>
+
+<form action="/comment/<%= post._id %>" method="POST">
+<input name="comment">
+<button>Add Comment</button>
+</form>
+
+<% comments.forEach(comment=>{ %>
+<p>
+<b><%= comment.username %></b>
+:
+<%= comment.comment %>
+</p>
+<% }) %>

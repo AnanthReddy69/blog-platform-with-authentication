@@ -1,0 +1,18 @@
+<a href="/create">New Post</a>
+
+<% posts.forEach(post=>{ %>
+
+<h2><%= post.title %></h2>
+
+<p><%= post.content %></p>
+
+<a href="/post/<%= post._id %>">View</a>
+
+<a href="/edit/<%= post._id %>">Edit</a>
+
+<form action="/delete/<%= post._id %>?_method=DELETE"
+method="POST">
+<button>Delete</button>
+</form>
+
+<% }) %>
